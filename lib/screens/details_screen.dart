@@ -13,7 +13,9 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -31,8 +33,8 @@ class DetailsScreen extends StatelessWidget {
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+              child: "Add to cart".text.make(),
+            ).wh(150, 50)
           ],
         ).p32(),
       ),
@@ -49,18 +51,30 @@ class DetailsScreen extends StatelessWidget {
                 height: 30.0,
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
-              child: Container(
-                color: Colors.white,
-                width: context.screenWidth,
-                child: Column(
-                  children: [
-                    catalog.name.text.xl4.color(MyTheme.darkBluish).bold.make(),
-                    catalog.desc.text.textStyle(context.captionStyle).xl.make(),
-                    10.heightBox,
-                  ],
-                ).py64(),
+                child: Container(
+                  color: Colors.white,
+                  width: context.screenWidth,
+                  child: Column(
+                    children: [
+                      catalog.name.text.xl4
+                          .color(MyTheme.darkBluish)
+                          .bold
+                          .make(),
+                      catalog.desc.text
+                          .textStyle(context.captionStyle)
+                          .xl
+                          .make(),
+                      10.heightBox,
+                      "Lorem ipsum, aurum haec dimitto. Consurgo cibo duo crux damno caput eximietate passim pello. He malus longe. Civis detineo sic. Lorem ipsum, aurum haec dimitto. Consurgo cibo duo crux damno caput."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16()
+                    ],
+                  ).py64(),
+                ),
               ),
-            ),)
+            )
           ],
         ),
       ),
