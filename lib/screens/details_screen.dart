@@ -16,19 +16,19 @@ class DetailsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
-            "\$${catalog.price}".text.bold.xl4.color(MyTheme.darkBluish).make(),
+            "\$${catalog.price}".text.bold.xl4.color(context.theme.buttonColor).make(),
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluish,
+                    context.theme.buttonColor,
                   ),
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
@@ -52,12 +52,12 @@ class DetailsScreen extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
                       catalog.name.text.xl4
-                          .color(MyTheme.darkBluish)
+                          .color(context.accentColor)
                           .bold
                           .make(),
                       catalog.desc.text
